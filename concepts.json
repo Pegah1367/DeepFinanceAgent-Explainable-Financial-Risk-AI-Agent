@@ -1,0 +1,53 @@
+{
+  "risk_buckets": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "offer_types": [
+    "Approve",
+    "Approve_with_conditions",
+    "Decline",
+    "ManualReview"
+  ],
+  "conditions_catalog": [
+    "Request additional documents",
+    "Reduce loan amount",
+    "Require co-signer",
+    "Increase interest rate",
+    "Shorten duration",
+    "Manual underwriting review"
+  ],
+  "feature_to_concept": {
+    "id": "Id",
+    "status": "Status",
+    "credit_score": "CreditScore",
+    "ltv": "LoanToValue",
+    "income": "Income",
+    "loan_amount": "LoanAmount",
+    "rate_of_interest": "InterestRate",
+    "dtir1": "DebtToIncomeRatio",
+    "credit_worthiness": "CreditWorthiness",
+    "loan_type": "LoanType",
+    "loan_purpose": "LoanPurpose",
+    "property_value": "PropertyValue",
+    "region": "Region",
+    "year": "Year",
+    "interest_rate_spread": "InterestRateSpread",
+    "upfront_charges": "UpfrontCharges",
+    "term": "Term",
+    "loan_limit": "LoanLimit",
+    "gender": "Gender",
+    "approv_in_adv": "ApprovInAdv",
+    "open_credit": "OpenCredit",
+    "business_or_commercial": "BusinessOrCommercial",
+    "age": "Age"
+  },
+  "policy_topics": [
+    "eligibility",
+    "required_documents",
+    "exceptions",
+    "pricing",
+    "manual_review_rules"
+  ]
+}

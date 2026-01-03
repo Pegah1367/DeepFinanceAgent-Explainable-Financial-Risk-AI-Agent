@@ -1,0 +1,50 @@
+{
+  "target": "status",
+  "input_columns": [
+    "id",
+    "year",
+    "loan_limit",
+    "gender",
+    "approv_in_adv",
+    "loan_type",
+    "loan_purpose",
+    "credit_worthiness",
+    "open_credit",
+    "business_or_commercial",
+    "loan_amount",
+    "rate_of_interest",
+    "interest_rate_spread",
+    "upfront_charges",
+    "term",
+    "neg_ammortization",
+    "interest_only",
+    "lump_sum_payment",
+    "property_value",
+    "construction_type",
+    "occupancy_type",
+    "secured_by",
+    "total_units",
+    "income",
+    "credit_type",
+    "credit_score",
+    "co-applicant_credit_type",
+    "age",
+    "submission_of_application",
+    "ltv",
+    "region",
+    "security_type",
+    "dtir1"
+  ],
+  "required_for_agent": [
+    "income",
+    "credit_score",
+    "loan_amount",
+    "ltv",
+    "dtir1",
+    "age"
+  ],
+  "risk_thresholds": {
+    "low": 0.3,
+    "high": 0.7
+  }
+}
