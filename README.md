@@ -146,6 +146,10 @@ The project is intentionally designed to showcase **engineering judgment**, not 
 
 YOU can see sample of sentences in :
 https://github.com/Pegah1367/DeepFinanceAgent-Explainable-Financial-Risk-AI-Agent/blob/main/Untitled1.png
+
 https://github.com/Pegah1367/DeepFinanceAgent-Explainable-Financial-Risk-AI-Agent/blob/main/Untitled2.png
+
 https://github.com/Pegah1367/DeepFinanceAgent-Explainable-Financial-Risk-AI-Agent/blob/main/Untitled3.png
+
 https://github.com/Pegah1367/DeepFinanceAgent-Explainable-Financial-Risk-AI-Agent/blob/main/Untitled4.png
+
