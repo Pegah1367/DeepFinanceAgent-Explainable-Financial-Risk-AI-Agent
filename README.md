@@ -77,87 +77,70 @@ User Input
    │
    └── LLM (FLAN-T5)
          └── Explanation Generation (constrained)
-Why This LLM Design Is Strong
+## Why This LLM Design Is Strong
 
-Most AI demos:
+**Most AI demos:**
+- Let the LLM **make decisions**
+- Blend **reasoning, prediction, and explanation** into a single black box
+- Are **difficult or impossible to audit**
 
-Let the LLM decide
+**This project:**
+- Uses the **LLM strictly as an interface layer**
+- Keeps **numerical reasoning deterministic** (handled by classical ML)
+- **Separates concerns**: policy, prediction, and language
 
-Blend reasoning, prediction, and explanation
+This architecture closely mirrors **real-world financial AI systems** operating in **regulated environments**, where transparency, traceability, and reproducibility are mandatory.
 
-Are impossible to audit
+---
 
-This project:
+## Features
 
-Uses the LLM as an interface layer
+### RAG-Based Concept Knowledge
+- Loan and risk definitions are stored in a curated `concepts.json`
+- A **FAISS vector index** enables fast semantic retrieval
+- The LLM answers **only from retrieved context**
+- Knowledge updates require **no model retraining**
 
-Keeps numerical reasoning deterministic
+### Risk Prediction (ML)
+- **Logistic Regression** pipeline for default risk estimation
+- Robust preprocessing:
+  - Missing-value imputation
+  - Feature scaling
+  - One-hot encoding for categorical variables
+- Outputs a **calibrated default probability**
+- Uses **threshold-based risk buckets**: Low / Medium / High
 
-Separates policy, prediction, and language
+### Stateful Chat Agent
+- Remembers previously provided applicant fields
+- Prevents redundant or repeated questions
+- Supports both **step-by-step** and **single-message** loan applications
 
-This mirrors real financial AI systems used in regulated environments.
+### Output Governance
+- Enforced **fixed JSON schema** (`response_schema.md`)
+- Explanation validation:
+  - Required format
+  - Mandatory feature mentions
+- Deterministic **fallback logic** if LLM output violates constraints
 
-Features
-RAG-Based Concept Knowledge
+---
 
-Definitions stored in concepts.json
+## Technology Stack
+- **Python**
+- **scikit-learn** — risk prediction model
+- **LangChain + FAISS** — retrieval and vector search
+- **sentence-transformers** — semantic embeddings
+- **FLAN-T5** — controlled LLM-based text generation
+- **Gradio** — interactive chat interface
 
-FAISS vector index for retrieval
+---
 
-LLM answers only from retrieved content
-
-Knowledge updates require no model retraining
-
-Risk Prediction (ML)
-
-Logistic Regression pipeline
-
-Imputation + scaling + one-hot encoding
-
-Outputs calibrated default probability
-
-Threshold-based risk buckets (Low / Medium / High)
-
-Stateful Chat Agent
-
-Remembers provided fields
-
-Prevents redundant questions
-
-Supports step-by-step or single-message applications
-
-Output Governance
-
-Fixed JSON schema (response_schema.md)
-
-Explanation validation (format + field mentions)
-
-Fallback logic if LLM output violates constraints
-
-Technology Stack
-
-Python
-
-scikit-learn (risk model)
-
-LangChain + FAISS (retrieval)
-
-sentence-transformers (embeddings)
-
-FLAN-T5 (controlled LLM generation)
-
-Gradio (interactive UI)
-
-Why This Project Matters
+## Why This Project Matters
 
 This repository demonstrates:
+- Correct and **responsible use of LLMs in regulated AI systems**
+- A **hybrid AI architecture** combining ML, RAG, and LLMs
+- **Production-grade input safety**, orchestration, and validation
+- **Explainability without hallucination**
 
-Correct use of LLMs in regulated AI systems
+The project is intentionally designed to showcase **engineering judgment**, not just model usage.
 
-Hybrid AI architecture (ML + RAG + LLM)
-
-Production-grade input safety and orchestration
-
-Explainability without hallucination
-
-It is designed to show engineering judgment, not just model usage.
