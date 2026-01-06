@@ -95,8 +95,20 @@ The design follows **regulated-AI principles**: numerical decisions are made by 
 
 ## Why This Project Matters
 
-Most AI demos let the LLM decide everything.  
-This project **separates prediction, policy, and language**, mirroring how real financial AI systems are built in regulated environments.
+Most AI demos allow the LLM to make all decisions, mixing prediction, reasoning, and explanation in a way that is difficult to audit.
+
+This project **separates prediction, policy, and language**, mirroring how real financial AI systems are built in **regulated environments**.
+
+- Machine learning models handle **numerical risk prediction**
+- Business rules handle **decision thresholds and policies**
+- The LLM is used **only to translate outcomes into clear, human-readable explanations**
+
+This design ensures that outputs are:
+- Auditable and deterministic at the decision level  
+- Interpretable and transparent for stakeholders  
+- **Human-centered in language**, making complex financial risk understandable to non-technical users
+
+
 
 ---
 
