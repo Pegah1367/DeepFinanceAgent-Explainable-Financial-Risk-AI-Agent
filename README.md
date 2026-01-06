@@ -113,16 +113,5 @@ This design ensures that outputs are:
 
 
 
----
-
-## Future Improvements
-
-- Probability calibration
-- Bias and fairness analysis
-- SHAP-based interpretability
-- FastAPI / Streamlit deployment
-- End-to-end monitoring and logging
-
----
 
 
